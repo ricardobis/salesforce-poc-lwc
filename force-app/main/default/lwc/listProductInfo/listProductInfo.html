@@ -1,0 +1,24 @@
+<template>
+    <lightning-button label="Get Products" onclick={getProducts}></lightning-button>  
+
+    <div class="slds-grid slds-wrap">
+        <template for:each={productList} for:item="product">
+            <div class="slds-col slds-size_1-of-2" key={product.Id}>
+                <div class="slds-box slds-var-m-around_medium">
+                    <lightning-card>
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_1-of-3">
+                                <img src={product.productImage} style="height: 100px; width: auto;" />
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <p class="slds-p-horizontal_small">{product.productName}</p>
+                                <p class="slds-p-horizontal_small">{product.accountName}</p>
+                                <p class="slds-p-horizontal_small">{product.accountWebsite}</p>
+                            </div>
+                        </div>
+                    </lightning-card>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>
